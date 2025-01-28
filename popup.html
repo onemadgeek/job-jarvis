@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Jarvis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="job-jarvis-popup">
+    <div class="container">
+        <header class="header">
+            <img src="images/job-jarvis-logo.jpg" alt="Job Jarvis" class="logo">
+            <h1>Job Jarvis</h1>
+        </header>
+
+        <nav class="nav">
+            <button class="nav-button" data-tab="apply">
+                <svg class="nav-icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5z"/>
+                </svg>
+                Apply
+            </button>
+            <button class="nav-button" data-tab="profile">
+                <svg class="nav-icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                </svg>
+                Profile
+            </button>
+        </nav>
+
+        <main class="content">
+            <div id="applyTab" class="tab-content">
+                <div class="info-card">
+                    <svg class="info-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"/>
+                    </svg>
+                    <div class="info-content">
+                        <h3>Ready to apply?</h3>
+                        <p>Click below to automatically fill out the job application.</p>
+                    </div>
+                </div>
+
+                <button id="triggerApply" class="auto-fill-button">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                </button>
+                <div class="auto-fill-label">Auto-Fill Application</div>
+            </div>
+
+            <div id="profileTab" class="tab-content hidden">
+                <div id="apiKeySetup" class="setup-screen">
+                    <div class="info-card">
+                        <svg class="info-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v-1l1-1 1-1 .257-.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 1 1 0 000-2z"/>
+                        </svg>
+                        <div class="info-content">
+                            <h3>Welcome to Job Jarvis!</h3>
+                            <p>To get started, please enter your Gemini API key. You can get one from <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a>.</p>
+                        </div>
+                    </div>
+                    
+                    <form id="apiKeyForm" class="setup-form">
+                        <div class="form-group">
+                            <label for="setupApiKey">Gemini API Key</label>
+                            <input type="password" id="setupApiKey" name="apiKey" required placeholder="Enter your Gemini API key">
+                            <small class="api-hint">Your API key will be securely stored in your browser</small>
+                        </div>
+                        <button type="submit" class="action-button">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Continue to Profile Setup
+                        </button>
+                    </form>
+                </div>
+
+                <form id="userForm" class="hidden">
+                    <div class="form-group">
+                        <label for="resume">Resume (PDF)</label>
+                        <div class="file-upload" id="fileUploadContainer">
+                            <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                            </svg>
+                            <p class="upload-text">Upload your resume</p>
+                            <input type="file" id="resume" name="resume" accept=".pdf">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Enter your first name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="middleName">Middle Name (Optional)</label>
+                        <input type="text" id="middleName" name="middleName" placeholder="Enter your middle name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Enter your last name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="linkedinUrl">LinkedIn Profile URL</label>
+                        <input type="url" id="linkedinUrl" name="linkedinUrl" placeholder="https://www.linkedin.com/in/your-profile">
+                        <small class="linkedin-hint">Please enter your full LinkedIn profile URL</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <div class="phone-input-container">
+                            <select id="phoneCountry" name="phoneCountry">
+                                <option value="+1">+1 US</option>
+                                <option value="+44">+44 UK</option>
+                                <option value="+91">+91 IN</option>
+                                <!-- Add more country codes as needed -->
+                            </select>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" pattern="[0-9-() ]+">
+                        </div>
+                        <small class="phone-hint">Please enter your phone number with area code</small>
+                    </div>
+                    
+                    <button type="submit" class="action-button">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Save Profile
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

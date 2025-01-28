@@ -1,0 +1,413 @@
+/* Base styles */
+.job-jarvis-popup {
+    width: 320px;
+    height: 100vh;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.job-jarvis-popup .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+/* Header */
+.job-jarvis-popup .header {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ffffff;
+}
+
+.job-jarvis-popup .logo {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.job-jarvis-popup .header h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+/* Navigation */
+.job-jarvis-popup .nav {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding: 0;
+    background: #fff;
+}
+
+.job-jarvis-popup .nav-button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: none;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+}
+
+.job-jarvis-popup .nav-button.active {
+    color: #047857;
+}
+
+.job-jarvis-popup .nav-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #047857;
+}
+
+.job-jarvis-popup .nav-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Content */
+.job-jarvis-popup .content {
+    padding: 16px;
+}
+
+/* Info Card */
+.job-jarvis-popup .info-card {
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.job-jarvis-popup .info-icon {
+    width: 20px;
+    height: 20px;
+    color: #047857;
+    flex-shrink: 0;
+}
+
+.job-jarvis-popup .info-content h3 {
+    margin: 0 0 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.job-jarvis-popup .info-content p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+}
+
+.job-jarvis-popup .info-content a {
+    color: #047857;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.job-jarvis-popup .info-content a:hover {
+    text-decoration: underline;
+}
+
+/* Form */
+.job-jarvis-popup .form-group {
+    margin-bottom: 1rem;
+}
+
+.job-jarvis-popup label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #444;
+}
+
+.job-jarvis-popup input[type="text"],
+.job-jarvis-popup input[type="email"],
+.job-jarvis-popup input[type="password"],
+.job-jarvis-popup input[type="tel"],
+.job-jarvis-popup input[type="url"] {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.job-jarvis-popup input[type="text"]:focus,
+.job-jarvis-popup input[type="email"]:focus,
+.job-jarvis-popup input[type="password"]:focus,
+.job-jarvis-popup input[type="tel"]:focus,
+.job-jarvis-popup input[type="url"]:focus {
+    outline: none;
+    border-color: #047857;
+    box-shadow: 0 0 0 2px rgba(4, 120, 87, 0.1);
+}
+
+/* File Upload */
+.job-jarvis-popup .file-upload {
+    position: relative;
+    border: 1px dashed #ddd;
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: #f9fafb;
+}
+
+.job-jarvis-popup .file-upload input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.job-jarvis-popup .file-upload:hover {
+    border-color: #047857;
+    background-color: #f0fdf4;
+}
+
+.job-jarvis-popup .upload-icon {
+    width: 20px;
+    height: 20px;
+    color: #666;
+    margin-bottom: 4px;
+    pointer-events: none;
+}
+
+.job-jarvis-popup .upload-text {
+    margin: 0;
+    color: #333;
+    font-size: 13px;
+    pointer-events: none;
+}
+
+.job-jarvis-popup .file-hint {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+    pointer-events: none;
+}
+
+/* Action Button */
+.job-jarvis-popup .action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #047857;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.job-jarvis-popup .action-button:hover {
+    background-color: #065f46;
+}
+
+.job-jarvis-popup .action-button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.job-jarvis-popup .action-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Auto-fill Button */
+.job-jarvis-popup .auto-fill-button {
+    background-color: #047857;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.job-jarvis-popup .auto-fill-button:hover {
+    background-color: #065f46;
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.job-jarvis-popup .auto-fill-button svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+.job-jarvis-popup .auto-fill-label {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #666;
+}
+
+.job-jarvis-popup .status {
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.job-jarvis-popup .status.success {
+    background-color: #f0fdf4;
+    color: #047857;
+}
+
+.job-jarvis-popup .status.error {
+    background-color: #fef2f2;
+    color: #dc2626;
+}
+
+.job-jarvis-popup .hidden {
+    display: none !important;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.job-jarvis-popup .loading-icon {
+    animation: spin 1s linear infinite;
+}
+
+.job-jarvis-popup .tab.active {
+    display: block;
+}
+
+.job-jarvis-popup .tab-content {
+    display: block;
+}
+
+.job-jarvis-popup .tab-content.hidden {
+    display: none !important;
+}
+
+/* Custom color palette */
+:root {
+    --color-primary-50: #f0fdf4;
+    --color-primary-100: #dcfce7;
+    --color-primary-200: #bbf7d0;
+    --color-primary-300: #86efac;
+    --color-primary-400: #4ade80;
+    --color-primary-500: #4CAF50;
+    --color-primary-600: #45a049;
+    --color-primary-700: #15803d;
+    --color-primary-800: #166534;
+    --color-primary-900: #14532d;
+}
+
+.job-jarvis-popup .api-hint {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* Setup Screen */
+.job-jarvis-popup .setup-screen {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.job-jarvis-popup .setup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.job-jarvis-popup .setup-screen .info-card {
+    background-color: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+.job-jarvis-popup .setup-screen .info-icon {
+    color: #047857;
+}
+
+.phone-input-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.phone-input-container select {
+    width: auto;
+    min-width: 90px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+}
+
+.phone-input-container select:focus {
+    outline: none;
+    border-color: #047857;
+    box-shadow: 0 0 0 2px rgba(4, 120, 87, 0.1);
+}
+
+.phone-input-container input[type="tel"] {
+    flex: 1;
+    min-width: 0;
+}
+
+.phone-hint {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.linkedin-hint {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    color: #6b7280;
+} 
